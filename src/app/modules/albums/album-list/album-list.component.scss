@@ -1,0 +1,18 @@
+@import "style-variables.scss";
+
+.albums {
+  height: calc(100vh - 200px);
+  display: block;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  margin-bottom: 15px;
+//   border: 1px solid #00000020;
+  .card {
+    min-height: 150px;
+    margin-bottom: 15px;
+  }
+  a {
+    color: $color-decor--blue;
+  }
+}

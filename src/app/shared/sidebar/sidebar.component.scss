@@ -1,0 +1,26 @@
+@import "style-variables.scss";
+
+.navbar-wrapper {
+  background-color: $color-decor--dark;
+  height: 100%;
+  h3#title {
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    color: $color-main--white;
+  }
+  .group {
+    padding: 0.5rem 1rem;
+    color: $color-main--gray50;
+    font-weight: 300;
+  }
+  .nav-item fa-icon {
+    min-width: 25px;
+    display: inline-block;
+  }
+}
+a {
+  color: $color-decor--blue;
+}
+.nav-pills .nav-link.active {
+  background-color: $color-decor--blue;
+}

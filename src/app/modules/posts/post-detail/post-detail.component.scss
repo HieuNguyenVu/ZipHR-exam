@@ -1,0 +1,17 @@
+@import "style-variables.scss";
+a {
+  color: $color-decor--blue;
+  //   text-decoration: none;
+}
+
+.container{
+    background-color: white;
+    min-height: calc(100vh - 80px);
+    margin-top: 15px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    h5{
+        margin-bottom: 40px;
+    }
+}

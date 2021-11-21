@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <app-search-bar [configuration]="configuration" (onSearch)="onSearch($event)">
+  </app-search-bar>
+  <div class="albums">
+    <div class="row" *ngIf="datas$ | async as albums">
+      <ng-container *ngFor="let album of albums">
+        <div class="col-xs-6 col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <a routerLink="{{ album.id }}">
+                <h5 class="card-title">
+                  <label class="ellipsis1">{{
+                    album.title | firstCharUpperPipe
+                  }}</label>
+                </h5>
+                <div style="pointer-events: none">
+                  <ngx-gallery
+                    [options]="galleryOptions"
+                    [images]="album.photos != null ? album.photos : []"
+                  ></ngx-gallery>
+                </div>
+              </a>
+              <a [href]="'/users/' + album.userId">{{
+                album.userId | numWithZeroPipe
+              }}</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination
+      [collectionSize]="collectionSize"
+      [(page)]="page"
+      [maxSize]="pageSize"
+      [rotate]="true"
+      [boundaryLinks]="true"
+      (pageChange)="refreshAlbums()"
+    ></ngb-pagination>
+
+    <select
+      class="custom-select"
+      style="width: auto"
+      [(ngModel)]="pageSize"
+      (ngModelChange)="refreshAlbums()"
+    >
+      <option [ngValue]="5">5 items per page</option>
+      <option [ngValue]="10">10 items per page</option>
+      <option [ngValue]="20">20 items per page</option>
+      <option [ngValue]="50">50 items per page</option>
+    </select>
+  </div>
+</div>

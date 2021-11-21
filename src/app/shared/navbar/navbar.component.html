@@ -1,0 +1,19 @@
+<nav class="nav">
+  <div class="navbar">
+    <button>
+      <fa-icon [icon]="faBars"></fa-icon>
+    </button>
+    <a href="/">Dashboard</a>
+    <ng-container *ngIf="paths$ | async as paths">
+      <ng-container *ngFor="let item of paths; index as i">
+        <label>/</label>
+        <ng-container *ngIf="i < paths.length - 1; else noneclick">
+          <a [href]="item.path">{{ item.label }}</a>
+        </ng-container>
+        <ng-template #noneclick>
+          <a>{{ item.label }}</a>
+        </ng-template>
+      </ng-container>
+    </ng-container>
+  </div>
+</nav>

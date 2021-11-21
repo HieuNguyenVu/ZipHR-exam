@@ -1,0 +1,18 @@
+.albums {
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+  overflow-x: clip;
+  .card {
+    margin-bottom: 2rem;
+    .card-body{
+        padding-bottom: 5px;
+    }
+    .card-title{
+        margin-bottom: 0px;
+        label{
+            min-height: 2.5rem;
+            margin-bottom: 0px;
+        }
+    }
+  }
+}

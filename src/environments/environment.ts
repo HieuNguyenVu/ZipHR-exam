@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASE_URL: 'https://jsonplaceholder.typicode.com',
+  POST_API: 'posts',
+  ALBUM_API: 'albums',
+  PHOTO_API: 'photos',
+  USER_API: 'users',
+  DEFAULT_PAGE_SIZE: 10
 };
 
 /*

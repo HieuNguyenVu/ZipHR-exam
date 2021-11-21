@@ -1,0 +1,44 @@
+@import "style-variables.scss";
+
+.posts-table {
+  height: calc(100vh - 200px);
+  display: block;
+  overflow-y: scroll;
+  margin-bottom: 15px;
+  border: 1px solid $color-decor--border-gray2;
+  // border-radius: 5px;
+  //   padding: 16px;
+  thead {
+    position: sticky;
+    top: -1px;
+    background-color: white;
+    outline: 1px solid $color-decor--border-gray2;
+    z-index: 0;
+    th {
+      white-space: nowrap;
+    }
+    //id
+    th:nth-child(1) {
+      min-width: 60px;
+      text-align: center;
+    }
+    th:nth-child(2) {
+      min-width: 60px;
+    }
+  }
+  tbody {
+    a {
+      color: $color-decor--blue;
+      //   text-decoration: none;
+    }
+    .id {
+      text-align: center;
+    }
+    .user-id {
+      text-align: center;
+    }
+    .post-title {
+      font-weight: 500;
+    }
+  }
+}

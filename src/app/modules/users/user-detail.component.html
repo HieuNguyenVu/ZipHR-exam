@@ -1,0 +1,11 @@
+<div class="user-wrapper" *ngIf="user$ | async as user">
+  <div class="user-header w-100 card">
+    <div class="container-fluid welcome-bar d-flex">
+      <div class="my-auto mx-5">
+        <h3>{{ user.name }}</h3>
+        <span>{{ user.email }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="user-content px-5 py-3"></div>
+</div>

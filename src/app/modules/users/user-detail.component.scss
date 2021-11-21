@@ -1,0 +1,14 @@
+@import "style-variables.scss";
+.dashboard-wrapper {
+    width: 100%;
+    .dashboard-header {
+      .welcome-bar {
+        // background-color: $color-main--white;
+        border-bottom: 1px solid $color-main--gray50;
+        height: 98px;
+      }
+    }
+    .dashboard-content {
+      height: calc(100vh - 150px);
+    }
+}

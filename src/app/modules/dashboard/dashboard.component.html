@@ -1,0 +1,76 @@
+<div class="dashboard-wrapper">
+  <div class="dashboard-header w-100 card">
+    <div class="container-fluid welcome-bar d-flex">
+      <div class="my-auto mx-5">
+        <h3>Welcome to ZipHR Exam</h3>
+        <span>Angular 13 Web App and Bootstrap v4</span>
+      </div>
+    </div>
+  </div>
+  <div class="dashboard-content px-5 py-3">
+    <div
+      class="container-fluid d-flex"
+      *ngIf="{
+        posts: postList$ | async,
+        photos: photoList$ | async,
+        albums: albumList$ | async
+      } as data"
+    >
+      <div class="left-wrapper w-100 d-flex flex-column">
+        <div class="statistics">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                <label class="big-nums">{{
+                  data.posts?.length | numWithCommas
+                }}</label
+                ><label>Posts</label>
+              </h5>
+            </div>
+          </div>
+          <div class="card card-middle">
+            <div class="card-body">
+              <h5 class="card-title">
+                <label class="big-nums">{{
+                  data.albums?.length | numWithCommas
+                }}</label
+                ><label>Albums</label>
+              </h5>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                <label class="big-nums">{{
+                  data.photos?.length | numWithCommas
+                }}</label
+                ><label>Photos</label>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="recent-photos card">
+          <h5>Recent Photos</h5>
+          <ngx-gallery
+            [options]="galleryOptions"
+            [images]="data.photos != null ? data.photos : []"
+          ></ngx-gallery>
+        </div>
+      </div>
+      <div class="w-100 pl-5">
+        <div class="lastest-post card">
+          <h5>Lastest Post</h5>
+          <ul class="list-group">
+            <ng-container *ngFor="let post of data.posts?.slice(0, 10)">
+              <li class="list-group-item">
+                <h5>{{ post.title }}</h5>
+                <label>{{ post.body }}</label>
+                <a [href]="'/post' + post.id">Read full</a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

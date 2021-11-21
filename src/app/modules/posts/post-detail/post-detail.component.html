@@ -1,0 +1,8 @@
+<div class="card container" *ngIf="post$ | async as post">
+  <h1>{{ post.title | firstCharUpperPipe }}</h1>
+  <h5>
+    Author:
+    <a [href]="'/user' + post.userId">{{ post.userId | numWithZeroPipe }}</a>
+  </h5>
+  <p>{{ post.body }}</p>
+</div>

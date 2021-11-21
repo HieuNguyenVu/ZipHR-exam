@@ -1,0 +1,27 @@
+.app-root {
+  .app-wrapper {
+  }
+  .nav-wrapper {
+    min-width: 200px;
+    width: 16.8%;
+    min-height: 100vh;
+    app-sidebar {
+      position: sticky;
+      top: 0;
+      display: block;
+      height: 100vh;
+    }
+  }
+  .layout-wrapper {
+    // width: calc(100% - 150px);
+    min-height: 100vh;
+    width: 83.2%;
+    // background-color: red;
+    app-navbar {
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+  }
+}

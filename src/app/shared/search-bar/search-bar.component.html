@@ -1,0 +1,22 @@
+<form class="d-flex search-bar" [formGroup]="searchForm">
+  <div class="input-group">
+    <input
+      type="text"
+      aria-label="Text input with dropdown button"
+      class="mr-3"
+      formControlName="value"
+    />
+    <select
+      class="form-select"
+      aria-label="Data type"
+      formControlName="category"
+    >
+        <ng-container *ngFor="let category of configuration.categories">
+            <option value="{{category.value}}" selected>{{category.label}}</option>
+        </ng-container>
+    </select>
+    <div class="col-auto">
+      <button type="submit" class="btn" (click)="onClickSearch()">Search</button>
+    </div>
+  </div>
+</form>

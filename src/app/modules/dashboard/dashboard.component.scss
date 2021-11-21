@@ -1,0 +1,99 @@
+@import "style-variables.scss";
+
+$dashboard-padding: 5rem;
+
+.dashboard-wrapper {
+  width: 100%;
+  .dashboard-header {
+    .welcome-bar {
+      // background-color: $color-main--white;
+      border-bottom: 1px solid $color-main--gray50;
+      height: 98px;
+    }
+  }
+  .dashboard-content {
+    height: calc(100vh - 150px);
+    .left-wrapper {
+      align-items: stretch;
+    }
+    .statistics {
+      display: flex;
+      // flex: 1 1 0px;
+      height: 85px;
+      margin-bottom: 10px;
+      // background-color: red;
+      // padding-bottom: 10px;
+      .card {
+        width: 100%;
+        text-align: center;
+        label{
+          margin-bottom: 0px;
+        }
+        .card-body{
+          padding: 0.5rem;
+          display: flex;
+          align-items: center;
+        }
+        .card-title{
+          margin-bottom: 0px;
+          margin: auto;
+        }
+      }
+      .card-middle {
+        margin: 0 10px;
+      }
+      .big-nums {
+        font-size: 2rem;
+        margin-right: 10px;
+      }
+    }
+    .recent-photos {
+      height: calc(100vh - 280px);
+    }
+    .lastest-post {
+      height: 100%;
+      .list-group {
+        overflow-y: scroll;
+        height: calc(100vh - 240px);
+        display: block;
+        border-bottom: 1px solid $color-decor--border-gray;
+        .list-group-item {
+          padding: 0.25rem 1.25rem;
+        }
+        .list-group-item label {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-height: 1;
+        }
+        .list-group-item h5 {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          line-height: 1;
+        }
+        .list-group-item a {
+          width: 100%;
+          text-align: right;
+          display: block;
+        }
+      }
+    }
+    .recent-photos,
+    .lastest-post {
+      // background-color: $color-main--white;
+      padding: 10px;
+    }
+  }
+}
+
+h3,
+h5,
+label,
+span {
+  color: $color-decor--text-black;
+}
